@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>CSS Layout Principles</h1>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Flexbox Example</h2>
+            <div class="flex-container">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Grid Example</h2>
+            <div class="grid-container">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Positioning Example</h2>
+            <div class="position-example">
+                <div class="box static">Static</div>
+                <div class="box relative">Relative</div>
+                <div class="box absolute">Absolute</div>
+                <div class="box fixed">Fixed</div>
+                <div class="box sticky">Sticky</div>
+            </div>
+        </section>
+    </main>
+
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #34495e;
+}
+
+/* Main Content Layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Flexbox Example */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.flex-item {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Grid Example */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.grid-item {
+    background-color: #2ecc71;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Positioning Example */
+.position-example {
+    position: relative;
+    height: 300px;
+    border: 2px dashed #ddd;
+    margin-top: 2rem;
+}
+
+.box {
+    width: 100px;
+    height: 60px;
+    padding: 0.5rem;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.static {
+    background-color: #9b59b6;
+    position: static;
+}
+
+.relative {
+    background-color: #e74c3c;
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+.absolute {
+    background-color: #f39c12;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.fixed {
+    background-color: #1abc9c;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.sticky {
+    background-color: #34495e;
+    position: sticky;
+    top: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+    <footer class="footer">
+        <p>&copy; 2023 CSS Layout Showcase</p>
+    </footer>
+</body>
+</html>
